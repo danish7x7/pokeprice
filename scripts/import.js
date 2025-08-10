@@ -3,20 +3,20 @@ import fetch from 'node-fetch'
 import dotenv from 'dotenv'
 
 // Load environment variables from .env.local
-dotenv.config({ path: '.env.local' })
-
-
-// 🔧 CHANGE THIS SET ID TO WHATEVER YOU WANT
-const SET_ID = 'base1' // Example: celebrations set
+dotenv.config({ path: '../.env.local' })
 
 // 🔑 Supabase config
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 const supabase = createClient(supabaseUrl, supabaseKey)
 
-// 🔑 Pokémon TCG API config
+// 🔑 Pokémon TCG API key
 const POKEMON_API_KEY = process.env.POKEMON_TCG_API_KEY
 
+// ✅ List of set IDs to import cards from
+const SET_IDS = ['ecard3']
+
+// ✅ Function to import all cards from a specific set
 async function importSetCards(setId) {
   console.log(`🔄 Importing cards from set: ${setId}`)
 
@@ -47,7 +47,16 @@ async function importSetCards(setId) {
     }
   }
 
-  console.log(`✅ Finished importing ${data.length} cards from set: ${setId}`)
+  console.log(`✅ Finished importing ${data.length} cards from set: ${setId}\n`)
 }
 
-importSetCards(SET_ID)
+// ✅ Loop through all SET_IDS and import cards from each
+async function runBulkImport() {
+  for (const setId of SET_IDS) {
+    await importSetCards(setId)
+  }
+
+  console.log('🎉 All sets imported successfully.')
+}
+
+runBulkImport()
