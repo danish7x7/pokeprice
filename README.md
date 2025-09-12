@@ -64,7 +64,7 @@ pokeprice/
 ### Clone and Install
 
 ```bash
-git clone https://github.com/your-username/pokeprice.git
+git clone https://github.com/danish7x7/pokeprice.git
 cd pokeprice
 npm install
 ```
@@ -84,12 +84,7 @@ EBAY_API_KEY=your_ebay_key
 
 Supabase dashboard settings (Authentication → URL Configuration):
 
-* Site URL: set to your Vercel production URL, for example `https://pokeprice-danishbir-singhs-projects.vercel.app`
-* Additional Redirect URLs: include both
-
-  * `http://localhost:3000`
-  * `https://pokeprice-danishbir-singhs-projects.vercel.app`
-    If your app uses a specific callback path, also add `https://pokeprice-danishbir-singhs-projects.vercel.app/auth/callback`.
+* Site URL: https://pokeprice-danishbir-singhs-projects.vercel.app
 
 ## Local Development
 
