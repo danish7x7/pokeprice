@@ -4,7 +4,6 @@ PokePrice is a full-stack web application that helps users track, analyze, and o
 
 ## Live Demo
 
-* Production: [https://pokeprice-danishbir-singhs-projects.vercel.app](https://pokeprice-danishbir-singhs-projects.vercel.app)
 * Preview: [https://pokeprice-git-main-danishbir-singhs-projects.vercel.app](https://pokeprice-git-main-danishbir-singhs-projects.vercel.app)
 
 ## Table of Contents
